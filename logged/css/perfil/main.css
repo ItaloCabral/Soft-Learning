@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Raleway";
+  font-size: 87.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #f1f5f8;
+  display: flex;
+}
+
+.side {
+  background-color: #219ebc;
+  width: 300px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.side .user {
+  color: #f1f5f8;
+  padding: 15px;
+}
+.side .user h2, .side .user h3 {
+  text-align: center;
+}
+.side .user h3 {
+  font-size: 1.4rem;
+  opacity: 0.75;
+}
+.side .menu {
+  width: 100%;
+  background-color: #219ebc;
+  display: flex;
+  flex-direction: column;
+}
+.side .menu a {
+  color: #f1f5f8;
+  font-size: 1.4rem;
+  font-weight: 500;
+  width: 100%;
+  text-decoration: none;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.side .menu a img {
+  width: 35px;
+  filter: invert(1);
+  margin-right: 20px;
+}
+.side .menu a:hover {
+  backdrop-filter: brightness(1.4);
+}
+
+.side-open {
+  left: 0 !important;
+}
+
+.toggle-side {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 75%;
+  }
+
+  .side {
+    position: absolute;
+    left: -300px;
+    transition: left 0.5s ease;
+  }
+
+  .toggle-side {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #219ebc;
+    right: -40px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+  }
+  .toggle-side:hover {
+    filter: brightness(1.2);
+  }
+  .toggle-side i {
+    font-size: 2rem;
+    color: #f1f5f8;
+  }
+}
+.main {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.main #contribuicoes, .main #configuracoes, .main #suporte {
+  display: none;
+  height: 100%;
+}
+.main #contribuicoes h1, .main #configuracoes h1, .main #suporte h1 {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+.main #contribuicoes:not(:target), .main #configuracoes:not(:target), .main #suporte:not(:target) {
+  display: none;
+}
+.main #contribuicoes:target, .main #suporte:target {
+  display: block;
+}
+.main #configuracoes:target {
+  display: flex;
+}
+.main #contribuicoes .deck {
+  margin: 0 auto;
+  width: fit-content;
+  padding: 10px;
+  overflow-y: scroll;
+}
+.main #contribuicoes .deck .card {
+  background-color: rgba(241, 245, 248, 0.7);
+  padding: 20px 30px;
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+  margin: 20px 0;
+  position: relative;
+}
+.main #contribuicoes .deck .card .sts {
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.main #configuracoes {
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main #configuracoes .config {
+  width: 100%;
+}
+.main #configuracoes .config .checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.main #configuracoes .config .checkbox label {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0 10px;
+  border-left: 1px solid rgba(0, 0, 0, 0.7);
+}
+.main #configuracoes .config .checkbox .switcher {
+  height: 30px;
+  width: 60px;
+  border-radius: 20px;
+  position: relative;
+  padding: 10px;
+  background-color: rgba(51, 51, 51, 0.7);
+  transition: all 0.1s ease;
+}
+.main #configuracoes .config .checkbox .switcher .switch {
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.main #configuracoes .config .checkbox input[type=checkbox] {
+  display: none;
+}
+.main #configuracoes .config .checkbox input[type=checkbox]:checked + .switcher {
+  background-color: rgba(0, 0, 51, 0.7);
+}
+.main #configuracoes .config .checkbox input[type=checkbox]:checked + .switcher .switch {
+  transform: translate(100%, -50%);
+}
+.main #configuracoes .config .user-edit {
+  margin: 30px 0;
+}
+.main #configuracoes .config .user-edit .form-group {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.main #configuracoes .config .user-edit .form-group label {
+  font-size: 2rem;
+}
+.main #configuracoes .config .user-edit .form-group input[type=text], .main #configuracoes .config .user-edit .form-group button {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #000;
+  background: none;
+  padding: 1px 5px;
+  height: 40px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.main #configuracoes .config .user-edit .form-group input[type=text]:disabled, .main #configuracoes .config .user-edit .form-group button:disabled {
+  color: rgba(0, 0, 0, 0.3);
+}
+.main #configuracoes .config .user-edit .form-group button {
+  border: none;
+  background-color: #219ebc;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 40px;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 2px;
+  color: white;
+}
+.main #configuracoes .config .user-edit .form-group button:hover {
+  background-color: rgba(33, 158, 188, 0.7);
+}
+.main #configuracoes .config .conta a {
+  color: #f55;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.main #configuracoes .config .conta a img {
+  width: 60px;
+}
+.main #configuracoes .config .conta a:hover {
+  filter: brightness(1.2);
+}
+.main #configuracoes .config .exibir {
+  display: flex !important;
+}
+.main #configuracoes .config #modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: brightness(0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.main #configuracoes .config #modal .win {
+  width: 450px;
+  height: 280px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.main #configuracoes .config #modal .win h2 {
+  margin: 15px 10px;
+  width: 100%;
+  text-align: center;
+}
+.main #configuracoes .config #modal .win .op {
+  width: 100%;
+  height: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.main #configuracoes .config #modal .win .op a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 20px 30px;
+  background-color: #f55;
+  font-weight: 500;
+  color: #fff;
+}
+.main #configuracoes .config #modal .win .op a:first-child {
+  background-color: #4e4;
+}
+.main #configuracoes .config #modal .win .op a:hover {
+  filter: brightness(1.2);
+}
+
+/*# sourceMappingURL=main.css.map */

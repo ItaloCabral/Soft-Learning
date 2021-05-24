@@ -1,0 +1,118 @@
+$primary: #219ebc;
+$secondary: #333;
+$main-bg: #fafafa;
+$error: #933;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Raleway', sans-serif;
+    font-size: 87.5%;
+    text-transform: uppercase;
+}
+
+body{
+    background-image: url(../../img/textura-livro.jpg);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-div{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+    max-width: 500px;
+    min-width: 400px;
+    width: 60vw;
+
+    form{
+        flex: 1;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 400px;
+        width: 100%;
+
+        .form-group{
+            display: flex;
+            flex-direction: column;
+
+            label{
+                font-weight: 600;
+            }
+
+            #lbl-user{
+                position: relative;
+
+                &:after{
+                    content: 'Nome já em uso :(';
+                    position: absolute;
+                    top: 0;
+                    left: 25%;
+                    color: $error;
+                    display: none;
+                }
+            }
+
+            #lbl-email{
+                position: relative;
+
+                &:after{
+                    content: 'Email já em uso :(';
+                    position: absolute;
+                    top: 0;
+                    left: 25%;
+                    color: $error;
+                    display: none;
+                }
+            }
+
+            input{
+                margin: 5px 0;
+                height: 60px;
+                border: 1px solid rgba($color: #000000, $alpha: .2);
+                outline: none;
+                font-size: 1.5rem;
+                color: rgba($color: #000000, $alpha: .7);
+                padding: 5px;
+            }
+            
+        }
+
+        button{
+            font-size: 1.2rem;
+            font-weight: 600;
+            width: fit-content;
+            padding: 20px 55px;
+            background-color: $secondary;
+            outline: none;
+            border: none;
+            color: #ddd;
+            border-radius: 40px;
+            transition: all .1s ease;
+
+            &:hover{
+                color: $secondary;
+                background-color: #ddd;
+                cursor: pointer;
+            }
+        }
+    }
+
+    h1{
+        font-weight: 400;
+        font-size: 2rem;
+    }
+}

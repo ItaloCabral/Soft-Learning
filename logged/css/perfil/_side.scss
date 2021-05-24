@@ -1,0 +1,100 @@
+$primary: #219ebc;
+$secondary: #333;
+$main-bg: #f1f5f8;
+
+.side{
+    background-color: $primary;
+    width: 300px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    .user{
+        color: $main-bg;
+        padding: 15px;
+
+        h2, h3{
+            text-align: center;
+        }
+
+        h3{
+            font-size: 1.4rem;
+            opacity: .75;
+        }
+    }
+
+    .menu{
+        width: 100%;
+        background-color: $primary;
+        display: flex;
+        flex-direction: column;
+
+        a{
+            color: #f1f5f8;
+            font-size: 1.4rem;
+            font-weight: 500;
+            width: 100%;
+            text-decoration: none;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+
+
+            img{
+                width: 35px;
+                filter:invert(1);
+                margin-right: 20px;
+            }
+
+            &:hover{
+                backdrop-filter: brightness(1.4);
+            }
+             
+        }
+
+    }
+}
+
+.side-open{
+    left: 0 !important;
+}
+
+.toggle-side{
+    display: none;
+}
+
+@media(max-width: 900px){
+    html{
+        font-size: 75%;
+    }
+    .side{
+        position: absolute;
+        left: -300px;
+        transition: left .5s ease;
+    }
+    .toggle-side{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        background-color: $primary;
+        right: -40px;
+        top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: filter .3s ease;
+
+        &:hover{
+            filter: brightness(1.2);
+        }
+
+        i{
+            font-size: 2rem;
+            color: $main-bg;
+        }
+    }
+}

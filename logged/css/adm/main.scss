@@ -1,0 +1,90 @@
+$primary: #219ebc;
+$secondary: #333;
+$main-bg: #f1f5f8;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+.req{
+    border-radius: 5px;
+    width: 100%;
+    background: linear-gradient( #e0dcdc, #c0bcbc);
+    margin: 10px;
+
+    .info{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+
+        .benca{
+            display: flex;
+            
+            a{
+                text-decoration: none;
+                margin: 5px;
+            }
+
+            div{
+                color: #fff;
+                width: 50px;
+                height: 50px;
+                font-size: 2.4rem;
+                font-weight: 900;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 2px;
+                
+                img{
+                    filter: invert(1);
+                }
+            }
+
+            .a{
+                background-color: seagreen;
+
+            }
+
+            .r{
+                background-color: firebrick;
+            }
+        }
+    }
+
+    .user{
+        background-color: #ddd;
+        width: 100%;
+        text-align: center;
+    }
+
+    h2{
+
+    }
+}
+
+                        // <div class='req'>
+                        //     <div class='info'>
+
+                        //         <h2>".$row['nome']."</h2>
+                        //         <p>".$row['desc']."</p>
+
+
+                        //         <div class='benca'>
+                        //             <a href='bencao.php?r=1?id=".$row['id']."'>Aceitar</a>
+                        //             <a href='bencao.php?r=2?id=".$row['id']."'>Recusar</a>
+                        //         </div>
+
+                        //     </div>
+
+                        //     <div class='user'>
+                        //         <h3>".$row['nome_user']."</h3>
+                        //     </div>
+                        // </div>   

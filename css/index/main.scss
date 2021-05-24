@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
+@import 'deck';
+
+$primary: #219ebc;
+$secondary: #333;
+$main-bg: #f1f5f8;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Roboto';
+    font-size: 87.5%;
+    
+}
+
+body{
+    position: realtive;
+    background-image: url("../img/textura-livro.jpg");
+}
+
+header{
+    height: 80px;
+    background-color: $primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    box-shadow: 0 0 15px 5px rgba($color: #000000, $alpha: .3);
+
+    .search{
+        width: 40vw;
+
+        input{
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 2px;
+            font-size: 1.2rem;
+
+            &[type="text"]{
+                background-color: $main-bg;
+                width: 80%;
+            }
+
+            &[type="submit"]{
+                width: 50px;
+                font-family: "Font-Awesome 5 Free";
+                font-weight: 900;
+            }
+        }
+    }
+
+    .login{
+        a{
+            color: $main-bg;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 0 10px;
+    
+            &:hover{
+                transition: all .3s ease;
+                color: $secondary;
+            }
+    
+            &:first-child{
+                color: $main-bg;
+                background-color: $secondary;
+                padding: 10px;
+                border-radius: 3px;
+
+                &:hover{
+                    color: $secondary;
+                    background-color: $main-bg;
+                }
+            }
+        }
+    }
+
+    
+}
+
+.search-collapse{
+    transition: all .3s ease;
+    margin: 5px 0;
+    position: relative;
+    padding-right: 20px;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary;
+    height: 60px;
+
+    .search{
+        
+        input{
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 2px;
+            font-size: 1.2rem;
+    
+            &[type="text"]{
+               background-color: $main-bg;
+               width: 80%;
+            }
+    
+            &[type="submit"]{
+                width: 50px;
+                font-family: "Font-Awesome 5 Free";
+                font-weight: 900;
+            }
+        }
+    }    
+}
+
+footer{
+    background-color: #1f1f1f;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: $main-bg;
+    
+    .content{
+        position: relative;
+        width: 100%;
+        background-color: #2f2f2f;
+        height: 80%;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        
+
+        img{
+            position: absolute;
+        }
+
+        h2{
+            opacity: .2;
+        }
+
+        a{
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: $main-bg;
+            opacity: .6;
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+
+        .suporte, .social{
+            display: flex;
+            
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+    }
+
+    .copyright{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+    }
+
+    .fa-heart{
+        width: 12px;
+    }
+}
+
+@media(max-width: 750px){
+    header .search{
+        display: none;
+    }
+
+    .search-collapse{
+        display: flex;
+    }
+}

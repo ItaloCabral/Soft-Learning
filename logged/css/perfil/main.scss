@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
+
+$d: 2.5rem;
+$p: .5rem;
+$g: .25;
+
+$primary: #219ebc;
+$secondary: #333;
+$main-bg: #f1f5f8;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Raleway';
+    font-size: 87.5%;
+    
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: $main-bg;
+    display: flex;
+}
+
+@import 'side';
+
+.main{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    #contribuicoes, #configuracoes, #suporte{
+        display: none;
+        height: 100%;
+
+        h1{
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+
+    #contribuicoes, #configuracoes, #suporte{
+        &:not(:target) {display: none}
+    }
+
+    #contribuicoes, #suporte{
+        &:target {display: block}
+    }
+
+    #configuracoes:target{display: flex;}
+
+    #contribuicoes{
+        // background-image: url(../../img/Empty.svg);
+        
+
+        .deck{
+            margin: 0 auto;
+            width: fit-content;
+            padding: 10px;
+            overflow-y: scroll;
+
+            .card{
+                background-color: rgba($color: $main-bg, $alpha: .7);
+                padding: 20px 30px;
+                border-radius: 2px;
+                box-shadow: 5px 5px 5px 5px rgba($color: #000000, $alpha: .7);
+                margin: 20px 0;
+                position: relative;
+
+                .sts{
+                    position: absolute;
+                    top: 5%;
+                    right: 2%;
+                    color: #000;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    #configuracoes{
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        .config{
+            width: 100%;
+
+            .checkbox{
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                
+                label{
+                    font-size: 2rem;
+                    cursor: pointer;
+                    margin-left: 10px;
+                    padding: 0 10px;
+                    border-left: 1px solid rgba($color: #000000, $alpha: .7);
+                }
+
+                .switcher{
+                    height: 30px;
+                    width: 60px;
+                    border-radius: 20px;
+                    position: relative;
+                    padding: 10px;
+                    background-color: rgba($color: #333, $alpha: .7);
+                    transition: all .1s ease;
+                    
+
+                    .switch{
+                        background-color: rgba($color: #fff, $alpha: 1);
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 50%;
+                        transition: all .2s ease;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+
+                input[type="checkbox"]{
+                    display: none;
+
+                    &:checked{
+
+                        + .switcher{
+                            background-color: rgba($color: #003, $alpha: .7);
+
+                            .switch{
+                                transform: translate(100%, -50%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .user-edit{
+                margin: 30px 0;
+
+                .form-group{
+                    display: flex;
+                    flex-direction:column-reverse;
+
+
+                    label{
+                        font-size: 2rem;
+                    }
+
+                    input[type="text"], button{
+                        outline: none;
+                        border: none;
+                        border-bottom: 2px solid #000;
+                        background: none;
+                        padding: 1px 5px;
+                        height: 40px;
+                        font-size: 2rem;
+                        margin-bottom: 10px;
+
+                        &:disabled{
+                            color:rgba($color: #000000, $alpha: .3);
+                        }
+                        
+                    }
+
+                    button{
+                        border: none;
+                        background-color: $primary;
+                        width: fit-content;
+                        height: fit-content;
+                        padding: 10px 40px;
+                        margin: 0 auto;
+                        cursor: pointer;
+                        border-radius: 2px;
+                        color: white;
+                        
+                        &:hover{
+                            background-color: rgba($color: $primary, $alpha: .7);
+                        }
+                    }
+                }
+            }
+
+            .conta{
+
+                a{
+                    color: #f55;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    
+                    img{
+                        width: 60px;
+                    }
+
+                    &:hover{
+                        filter: brightness(1.2);
+                    }
+                }
+            }
+            
+            .exibir{
+                display: flex !important;
+            }
+            #modal{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                width: 100vw;
+                height: 100vh;
+                backdrop-filter: brightness(.3);
+                display: none;
+                align-items: center;
+                justify-content: center;
+
+                .win{
+                    width: 450px;
+                    height: 280px;
+                    background-color: #fff;
+                    border-radius: 2px;
+
+                    h2{
+                        margin: 15px 10px;
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    .op{
+                        width: 100%;
+                        height: calc(100% - 40px);
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+
+                        a{
+                            text-decoration: none;
+                            font-size: 1.4rem;
+                            padding: 20px 30px;
+                            background-color: #f55;
+                            font-weight: 500;
+                            color: #fff;
+
+                            &:first-child{
+                                background-color: #4e4;
+
+                            }
+
+                            &:hover{
+                                filter: brightness(1.2);
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

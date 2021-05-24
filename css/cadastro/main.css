@@ -1,0 +1,104 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Raleway", sans-serif;
+  font-size: 87.5%;
+  text-transform: uppercase;
+}
+
+body {
+  background-image: url(../../img/textura-livro.jpg);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-div {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  max-width: 500px;
+  min-width: 400px;
+  width: 60vw;
+}
+.form-div form {
+  flex: 1;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 400px;
+  width: 100%;
+}
+.form-div form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-div form .form-group label {
+  font-weight: 600;
+}
+.form-div form .form-group #lbl-user {
+  position: relative;
+}
+.form-div form .form-group #lbl-user:after {
+  content: "Nome já em uso :(";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  color: #933;
+  display: none;
+}
+.form-div form .form-group #lbl-email {
+  position: relative;
+}
+.form-div form .form-group #lbl-email:after {
+  content: "Email já em uso :(";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  color: #933;
+  display: none;
+}
+.form-div form .form-group input {
+  margin: 5px 0;
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+}
+.form-div form button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: fit-content;
+  padding: 20px 55px;
+  background-color: #333;
+  outline: none;
+  border: none;
+  color: #ddd;
+  border-radius: 40px;
+  transition: all 0.1s ease;
+}
+.form-div form button:hover {
+  color: #333;
+  background-color: #ddd;
+  cursor: pointer;
+}
+.form-div h1 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+/*# sourceMappingURL=main.css.map */

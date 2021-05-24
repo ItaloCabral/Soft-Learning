@@ -1,0 +1,103 @@
+$primary: #219ebc;
+$secondary: #333;
+$main-bg: #f1f5f8;
+
+.card-deck{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    column-gap: 5px;
+    row-gap: 5px;
+    padding: 10px 0;
+    margin-left: 20px;
+
+    .flip-card{
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+        border-radius: 4px;
+        justify-self: center;
+
+        &:focus{
+            outline: 0;
+        }
+
+        &:hover, &:focus{
+            .flip-card-inner{
+                transform: rotateY(180deg);
+            }
+        }
+
+        h3{
+            font-size: 20px;
+            font-weight: bold;
+            color: $secondary;
+            position: relative;
+        }
+
+        .flip-card-inner{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform .6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba($color: #000000, $alpha: .2);
+            
+            .flip-card-front, .flip-card-back{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+            }
+
+            .flip-card-front{
+                background: linear-gradient(to left, #e0dcdc, #c0bcbc);
+                color: $secondary;
+                z-index: 2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .flip-card-back{
+                background: linear-gradient(to left, #e0dcdc, #c0bcbc);
+                color: $secondary;
+                transform: rotateY(180deg);
+                display: flex;
+                z-index: 1;
+                justify-content: center;
+                align-items: center;
+
+                h3{
+                    span{
+                        color: #555;
+                        position: absolute;
+                        top: 150%;
+                        left: 50%;
+                        transform: translate(-50%);
+                        cursor: pointer;
+
+                        .cre{
+                            display: none;
+                        }
+                            &:hover{    
+                            .cre{
+                                    position: absolute;
+                                    top: -250%;
+                                    left: 50%;
+                                    width: 100px;
+                                    transform: translateX(-50%);
+                                    background-color: #1f1f1f;
+                                    padding: 10px 20px;
+                                    border-radius: 3px;
+                                    color: $main-bg;
+                                    display: block;
+                            }                 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
