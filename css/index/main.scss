@@ -1,167 +1,226 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto";
+  font-size: 87.5%;
+}
+
+body {
+  background-image: url("../../img/textura-livro.jpg");
+}
+
+header {
+  height: 80px;
+  background-color: #219ebc;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+header .search, header .login, header .logo {
+  margin: auto 0;
+}
+
+header .search {
+  width: 40vw;
+}
+
+header .search input {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  font-size: 1.2rem;
+}
+
+header .search input[type=text] {
+  background-color: #f1f5f8;
+  width: 100%;
+}
+
+header .login a {
+  color: #f1f5f8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0 10px;
+}
+
+header .login a:hover {
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+header .login a:first-child {
+  color: #f1f5f8;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+header .login a:first-child:hover {
+  color: #333;
+  background-color: #f1f5f8;
+}
+
+section {
+  position: relative;
+  min-height: calc(100vh - 80px);
+}
+
 @import 'deck';
 
-$primary: #219ebc;
-$secondary: #333;
-$main-bg: #f1f5f8;
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+footer {
+  background-color: #1f1f1f;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #f1f5f8;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: -400px;
 }
 
-html{
-    font-family: 'Roboto';
-    font-size: 87.5%;
-    
+footer .content {
+  position: relative;
+  width: 100%;
+  background-color: #2f2f2f;
+  height: 80%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
-body{
-    background-image: url("../../img/textura-livro.jpg");
+footer .content img {
+  position: absolute;
 }
 
-header{
-    height: 80px;
-    background-color: $primary;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 15px;
-    box-shadow: 0 0 15px 5px rgba($color: #000000, $alpha: .3);
+footer .content h2 {
+  opacity: 0.2;
+}
+
+footer .content a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #f1f5f8;
+  opacity: 0.6;
+}
+
+footer .content a:hover {
+  opacity: 1;
+}
+
+footer .content .suporte, footer .content .social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+footer .copyright {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+footer .fa-heart {
+  width: 12px;
+}
+
+@media (max-width: 750px) {
+  header {
+    height: 140px;
+    align-items: flex-start;
     position: relative;
+  }
 
-    .search,.login,.logo{
-        margin: auto 0;
-    }
+  header .login, header .logo {
+    margin: 20px 0;
+  }
 
-    .search{
-        width: 40vw;
-
-        input{
-            padding: 10px;
-            border: none;
-            outline: none;
-            border-radius: 2px;
-            font-size: 1.2rem;
-
-            &[type="text"]{
-                background-color: $main-bg;
-                width: 100%;
-            }
-        }
-    }
-
-    .login{
-        a{
-            color: $main-bg;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin: 0 10px;
-    
-            &:hover{
-                transition: all .3s ease;
-                color: $secondary;
-            }
-    
-            &:first-child{
-                color: $main-bg;
-                background-color: $secondary;
-                padding: 10px;
-                border-radius: 3px;
-
-                &:hover{
-                    color: $secondary;
-                    background-color: $main-bg;
-                }
-            }
-        }
-    }   
-}
-
-section{
-    position: relative;
-    min-height: calc(100vh - 80px);
-}
-
-footer{
-    background-color: #1f1f1f;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: $main-bg;
+  header .search {
     position: absolute;
-    left: 0;
-    width: 100%;
-    bottom: -400px;
-    
-    .content{
-        position: relative;
-        width: 100%;
-        background-color: #2f2f2f;
-        height: 80%;
-        padding: 20px;
-        display: flex;
-        justify-content: space-around;
-        
-
-        img{
-            position: absolute;
-        }
-
-        h2{
-            opacity: .2;
-        }
-
-        a{
-            font-size: 1.4rem;
-            font-weight: 600;
-            text-decoration: none;
-            color: $main-bg;
-            opacity: .6;
-
-            &:hover{
-                opacity: 1;
-            }
-        }
-
-        .suporte, .social{
-            display: flex;
-            
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
-    }
-
-    .copyright{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 30px;
-    }
-
-    .fa-heart{
-        width: 12px;
-    }
+    top: 90px;
+    left: 10px;
+    width: calc(100% - 20px);
+  }
 }
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
 
-@media(max-width: 750px){
-    header{
-        height: 140px;
-        align-items: flex-start;
-        position: relative;
-
-        .login,.logo{
-            margin: 20px 0;
-        }
-
-        .search{
-            position: absolute;
-            top: 90px;
-            left: 10px;
-            width: calc(100% - 20px);
-        }        
-    }
-}
+/*# sourceMappingURL=main.scss.map */

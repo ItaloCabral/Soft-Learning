@@ -1,11 +1,87 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto";
+  font-size: 87.5%;
+}
+
+body {
+  background-image: url("../../img/textura-livro.jpg");
+}
+
+header {
+  height: 80px;
+  background-color: #219ebc;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+header .search, header .login, header .logo {
+  margin: auto 0;
+}
+
+header .search {
+  width: 40vw;
+}
+
+header .search input {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  font-size: 1.2rem;
+}
+
+header .search input[type=text] {
+  background-color: #f1f5f8;
+  width: 100%;
+}
+
+header .login a {
+  color: #f1f5f8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0 10px;
+}
+
+header .login a:hover {
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+header .login a:first-child {
+  color: #f1f5f8;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+header .login a:first-child:hover {
+  color: #333;
+  background-color: #f1f5f8;
+}
+
+section {
+  position: relative;
+  min-height: calc(100vh - 80px);
+}
+
 .card-deck {
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
   column-gap: 5px;
   row-gap: 5px;
   padding: 10px 0;
-  margin-left: 20px;
+  justify-content: center;
 }
 .card-deck .flip-card {
   background-color: transparent;
@@ -83,74 +159,6 @@
   display: block;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Roboto";
-  font-size: 87.5%;
-}
-
-body {
-  background-image: url("../../img/textura-livro.jpg");
-}
-
-header {
-  height: 80px;
-  background-color: #219ebc;
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 15px;
-  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
-  position: relative;
-}
-header .search, header .login, header .logo {
-  margin: auto 0;
-}
-header .search {
-  width: 40vw;
-}
-header .search input {
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 2px;
-  font-size: 1.2rem;
-}
-header .search input[type=text] {
-  background-color: #f1f5f8;
-  width: 100%;
-}
-header .login a {
-  color: #f1f5f8;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin: 0 10px;
-}
-header .login a:hover {
-  transition: all 0.3s ease;
-  color: #333;
-}
-header .login a:first-child {
-  color: #f1f5f8;
-  background-color: #333;
-  padding: 10px;
-  border-radius: 3px;
-}
-header .login a:first-child:hover {
-  color: #333;
-  background-color: #f1f5f8;
-}
-
-section {
-  position: relative;
-  min-height: calc(100vh - 80px);
-}
-
 footer {
   background-color: #1f1f1f;
   height: 400px;
@@ -164,6 +172,7 @@ footer {
   width: 100%;
   bottom: -400px;
 }
+
 footer .content {
   position: relative;
   width: 100%;
@@ -173,12 +182,15 @@ footer .content {
   display: flex;
   justify-content: space-around;
 }
+
 footer .content img {
   position: absolute;
 }
+
 footer .content h2 {
   opacity: 0.2;
 }
+
 footer .content a {
   font-size: 1.4rem;
   font-weight: 600;
@@ -186,20 +198,24 @@ footer .content a {
   color: #f1f5f8;
   opacity: 0.6;
 }
+
 footer .content a:hover {
   opacity: 1;
 }
+
 footer .content .suporte, footer .content .social {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 footer .copyright {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 30px;
 }
+
 footer .fa-heart {
   width: 12px;
 }
@@ -210,9 +226,11 @@ footer .fa-heart {
     align-items: flex-start;
     position: relative;
   }
+
   header .login, header .logo {
     margin: 20px 0;
   }
+
   header .search {
     position: absolute;
     top: 90px;
@@ -220,5 +238,71 @@ footer .fa-heart {
     width: calc(100% - 20px);
   }
 }
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=main.scss.map */
 
 /*# sourceMappingURL=main.css.map */

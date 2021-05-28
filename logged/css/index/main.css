@@ -5,7 +5,7 @@
   column-gap: 5px;
   row-gap: 5px;
   padding: 10px 0;
-  margin-left: 20px;
+  justify-content: center;
 }
 .card-deck .flip-card {
   background-color: transparent;
