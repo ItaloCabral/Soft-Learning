@@ -11,6 +11,4 @@
     $user->setSenha($s);
 
     $user->Cadastrar($user);
-
-    header("Location: ../login.php");
 ?>

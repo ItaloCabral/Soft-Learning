@@ -7,13 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/cadastro/main.css">
     <title>Cadastre-se</title>
-    <?php
-        if(isset($_GET['c'])){
-            $c = $_GET['c'];
-
-            echo ($c==1) ? "<style>#lbl-user::after{display: inline !important;}</style>" : (($c==2) ? "<style>#lbl-email::after{display: inline !important;}</style>" : "");
-        }
-    ?>
 </head>
 <body>
     <div class="form-div">
@@ -22,12 +15,12 @@
         <form action="./classes/cadastrar-usuario.php" method="POST">
 
             <div class="form-group">
-                <label id="lbl-user" for="user">Usuário</label>
+                <label id="lbl-user" for="user">Usuário <span id="uMsg">Nome já em uso :(</span></label>
                 <input type="text" name="user" id="user">
             </div>
             
             <div class="form-group">
-                <label id="lbl-email" for="email">E-mail</label>
+                <label id="lbl-email" for="email">E-mail <span id="eMsg">Email já em uso :(</span></label>
                 <input type="text" name="email" id="email">
             </div>
 
@@ -41,5 +34,7 @@
             <button type="submit">Login</button>
         </form>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/App.js"></script>
 </body>
 </html>

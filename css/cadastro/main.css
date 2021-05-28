@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -51,8 +50,7 @@ body {
 .form-div form .form-group #lbl-user {
   position: relative;
 }
-.form-div form .form-group #lbl-user:after {
-  content: "Nome já em uso :(";
+.form-div form .form-group #lbl-user span {
   position: absolute;
   top: 0;
   left: 25%;
@@ -62,8 +60,7 @@ body {
 .form-div form .form-group #lbl-email {
   position: relative;
 }
-.form-div form .form-group #lbl-email:after {
-  content: "Email já em uso :(";
+.form-div form .form-group #lbl-email span {
   position: absolute;
   top: 0;
   left: 25%;

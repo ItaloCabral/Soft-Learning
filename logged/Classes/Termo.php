@@ -30,48 +30,57 @@
         
         // Banco ================================================================
 
-        function Listar($s){
+        static function Listar($s){
             $conexao = Conexao::Conectar();
-            $stmt = $conexao->prepare("
-            SELECT * FROM tb_termos 
-                inner join tb_user on tb_termos.id_user = tb_user.id_user
-                    WHERE tb_termos.`status` = $s
-            ");
-
-            try{
-                $stmt->execute();
-            } catch (Exception $e){
-                echo $e;
-            }
 
             if($s == 0){
+
+                $stmt = $conexao->prepare("
+                SELECT * FROM tb_termos 
+                    inner join tb_user on tb_termos.id_user = tb_user.id_user
+                        WHERE tb_termos.`status` = $s
+                            order by `nome`");
+    
+                try{
+                    $stmt->execute();
+                } catch (Exception $e){
+                    echo $e;
+                }
+    
                 while($row = $stmt->fetch(PDO::FETCH_BOTH)){
                     echo("
-                        <div class='req'>
-                            <div class='info'>
-                                <div class='desc'>
-                                    <h2>".$row['nome']."</h2>
-                                    <p>".$row['desc']."</p>
-                                </div>
-                            
-                            
-                                <div class='benca'>
-                                    <a href='bencao.php?r=1&id=".$row['id']."'><div class='a'><img width='40px' src='img/aceitar.svg'/></div></a>
-                                    <a href='bencao.php?r=2&id=".$row['id']."'><div class='r'><img width='40px' src='img/excluir.svg'/></div></a>
-                                </div>
+                        <div class='card'>
+                            <h1>".$row['nome']."</h1>
+                            <span class='user'>".$row['nome_user']."</span>            
 
+                            <div class='op'>
+                                <div class='group'>
+                                    <a href='javascript:void(0)' data-r='1' class='aceitar' id='".$row['id']."'>Aceitar</a>
+                                    <a href='javascript:void(0)' data-r='2' class='recusar' id='".$row['id']."'>Recusar</a>
+                                </div>
                             </div>
 
-                            <div class='user'>
-                                <h3> Enviado por: ".$row['nome_user']."</h3>
+                            <div class='content'>
+                                <p>".$row['desc']."</p>
                             </div>
                         </div>
                     ");
                 }
-            
-                  
-                
             }else{
+                $query = (isset($_GET['query'])) ? $_GET['query'] : '';    
+
+                $stmt = $conexao->prepare("
+                    select * from `tb_termos`
+                        inner join tb_user on tb_termos.id_user = tb_user.id_user
+                            WHERE tb_termos.`nome` like '%$query%' and tb_termos.`status`=$s
+                                order by `nome`");
+
+                try {
+                    $stmt->execute();
+                } catch (PDOException $e) {
+                    echo "<pre>".$e->getMessage()."</pre>";
+                }
+
                 while($row = $stmt->fetch(PDO::FETCH_BOTH)){
                     echo("
                     
@@ -97,12 +106,27 @@
                     
                     ");
                 }
-
+                echo("
+                    <a href='./colaborar.php'>
+                        <div class='flip-card' tabIndex='0'>
+                            <div class='flip-card-inner'>
+            
+                                <div class='flip-card-front'>
+                                <h3 style='font-size: 3rem'>+</h3>
+                                </div>
+            
+                                <div class='flip-card-back'>
+                                <h3>Sentiu falta de algum termo? Contribua para nosso site!</h3>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </a> 
+                ");
             }
-
         }
 
-        function Permissao($r, $id){
+        static function Permissao($r, $id){
             $conexao = Conexao::Conectar();
 
             $stmt = $conexao->prepare("update tb_termos
@@ -145,7 +169,7 @@
             }
 
             while($row = $stmt->fetch(PDO::FETCH_BOTH)){
-                $st;
+                $st = 0;
                 switch($row['status']){
                     case 0:
                         $st = "Pendente";

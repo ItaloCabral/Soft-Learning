@@ -18,8 +18,7 @@ html{
 }
 
 body{
-    position: realtive;
-    background-image: url("../img/textura-livro.jpg");
+    background-image: url("../../img/textura-livro.jpg");
 }
 
 header{
@@ -27,9 +26,13 @@ header{
     background-color: $primary;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
+    padding: 0px 15px;
     box-shadow: 0 0 15px 5px rgba($color: #000000, $alpha: .3);
+    position: relative;
+
+    .search,.login,.logo{
+        margin: auto 0;
+    }
 
     .search{
         width: 40vw;
@@ -43,13 +46,7 @@ header{
 
             &[type="text"]{
                 background-color: $main-bg;
-                width: 80%;
-            }
-
-            &[type="submit"]{
-                width: 50px;
-                font-family: "Font-Awesome 5 Free";
-                font-weight: 900;
+                width: 100%;
             }
         }
     }
@@ -79,44 +76,12 @@ header{
                 }
             }
         }
-    }
-
-    
+    }   
 }
 
-.search-collapse{
-    transition: all .3s ease;
-    margin: 5px 0;
+section{
     position: relative;
-    padding-right: 20px;
-    width: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background-color: $primary;
-    height: 60px;
-
-    .search{
-        
-        input{
-            padding: 10px;
-            border: none;
-            outline: none;
-            border-radius: 2px;
-            font-size: 1.2rem;
-    
-            &[type="text"]{
-               background-color: $main-bg;
-               width: 80%;
-            }
-    
-            &[type="submit"]{
-                width: 50px;
-                font-family: "Font-Awesome 5 Free";
-                font-weight: 900;
-            }
-        }
-    }    
+    min-height: calc(100vh - 80px);
 }
 
 footer{
@@ -127,6 +92,10 @@ footer{
     justify-content: space-between;
     align-items: center;
     color: $main-bg;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -400px;
     
     .content{
         position: relative;
@@ -179,11 +148,20 @@ footer{
 }
 
 @media(max-width: 750px){
-    header .search{
-        display: none;
-    }
+    header{
+        height: 140px;
+        align-items: flex-start;
+        position: relative;
 
-    .search-collapse{
-        display: flex;
+        .login,.logo{
+            margin: 20px 0;
+        }
+
+        .search{
+            position: absolute;
+            top: 90px;
+            left: 10px;
+            width: calc(100% - 20px);
+        }        
     }
 }

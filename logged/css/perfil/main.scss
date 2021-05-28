@@ -56,8 +56,7 @@ body{
     #configuracoes:target{display: flex;}
 
     #contribuicoes{
-        // background-image: url(../../img/Empty.svg);
-        
+        overflow-y: auto;        
 
         .deck{
             margin: 0 auto;

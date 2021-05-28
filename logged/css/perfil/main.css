@@ -126,6 +126,9 @@ body {
 .main #configuracoes:target {
   display: flex;
 }
+.main #contribuicoes {
+  overflow-y: auto;
+}
 .main #contribuicoes .deck {
   margin: 0 auto;
   width: fit-content;

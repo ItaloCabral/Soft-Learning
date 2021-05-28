@@ -2,10 +2,7 @@
     class Conexao{
         
         public static function Conectar(){
-            $servidor = 'localhost';
-            $banco = 'bd_dicio';
-            $user = 'root';
-            $senha = '';
+            [$servidor, $banco, $user, $senha] = ['localhost','bd_dicio','root',''];
 
             $conexao = new PDO("mysql:host=$servidor;
                                 dbname=$banco",

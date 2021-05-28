@@ -33,7 +33,7 @@
 
         // Banco ==================================================================
 
-        public function VerificarCadastro($n, $e){
+        static function VerificarCadastro($n, $e){
             $conexao = Conexao::Conectar();
             $stmt = $conexao->prepare("select `nome_user`, `email_user` from tb_user
                                         where(nome_user like binary '$n')
@@ -57,7 +57,12 @@
         } 
 
         public function VerificarLogin($n, $s){
+            $conexao = Conexao::Conectar();
+            $stmt = $conexao->prepare("select `id_user`, `nome_user`, `nivel_user` from tb_user where(nome_user like binary '".$n."') and (`senha_user` = '".sha1($s)."') and (`ativo_user` = 1) limit 1");
+            $stmt->execute();
+            $rows = $stmt->fetchAll();
 
+            return (count($rows)!=1) ? $cod=0 : $cod=1;
         }
 
         public function Cadastrar($user){
@@ -81,6 +86,8 @@
                     } catch (Exception $e) {
                         echo $e;
                     }
+
+                    header("Location: ../login.php");
                 
                    break;
                 
@@ -97,29 +104,30 @@
 
         public function Logar($n, $s){
             $conexao = Conexao::Conectar();
-
-            $stmt = $conexao->prepare("select `id_user`, `nome_user`, `nivel_user` from tb_user where(nome_user like binary '".$n."') and (`senha_user` = '".sha1($s)."') and (`ativo_user` = 1) limit 1");
-            $stmt->execute();
-            $rows = $stmt->fetchAll();
-            if(count($rows) != 1){
+                                                                                                                                         
+            $cod = $this->VerificarLogin($n, $s);
+            
+            if($cod != 1){
                 header("Location: ../login.php?l=0");
             }else{
-                if(!isset($_SESSION)) session_start();
 
+                if(!isset($_SESSION)) session_start();
+    
                 $stmt = $conexao->prepare("select `id_user`, `nome_user`, `nivel_user`, `email_user` from tb_user where(`nome_user` = '".$n."') and (`senha_user` = '".sha1($s)."') and (`ativo_user` = 1) limit 1");
                 $stmt->execute();
-
+    
                 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-
+    
                     $_SESSION['userId'] = $row['id_user'];
                     $_SESSION['userNome'] = $row['nome_user'];
                     $_SESSION['userNivel'] = $row['nivel_user'];
                     $_SESSION['userEmail'] = $row['email_user'];
-
+    
                 }
-
+    
                 header("Location: ../logged/index.php");
-            }
+            }                
+            
         }
         
     }

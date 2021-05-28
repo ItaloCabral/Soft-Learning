@@ -1,9 +1,11 @@
 <?php
     include'./Classes/Termo.php';
 
+    session_start();
+
     $nome = $_POST['termo'];
     $desc = $_POST['desc'];
-    $idUser = $_GET['idUser'];
+    $idUser = $_SESSION['userId'];
 
     $termo = new Termo();
 
@@ -11,7 +13,5 @@
     $termo->setDesc($desc);
 
     $termo->Cadastrar($termo, $idUser);
-
-    header("Location: index.php");
 
 ?>

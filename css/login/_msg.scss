@@ -1,0 +1,58 @@
+$primary: #219ebc;
+$secondary: #333;
+$main-bg: #eaeaea;
+
+body{
+    overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes popup {
+    0%{
+        opacity: 0;
+        left: -50%;
+    }
+
+    10%{
+        opacity:0;
+    }
+
+    15%{
+        opacity: 1;
+        left: 50%;
+    }
+
+    50%{
+        opacity: 1;
+        left: 50%;
+    }
+
+    85%{
+        opacity: 1;
+        left: 50%;
+    }
+
+    90%{
+        opacity:0;
+    }
+
+    100%{
+        opacity: 0;
+        left: 150%;
+    }
+}
+
+.msg{
+    padding: 30px 100px;
+    background-color: $main-bg;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px 3px rgba($color: #000000, $alpha: .7);
+    position: absolute;
+    bottom: 5%;
+    left: -50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: 600;
+    animation: popup 4s ease-in-out;
+    display: none;
+}   

@@ -12,79 +12,69 @@ html{
     font-family: sans-serif;
 }
 
-.req{
-    border-radius: 5px;
-    width: 100%;
-    background: linear-gradient( #e0dcdc, #c0bcbc);
-    margin: 10px;
+header{
+    height: 70px;
 
-    .info{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding: 20px;
-
-        .benca{
-            display: flex;
-            
-            a{
-                text-decoration: none;
-                margin: 5px;
-            }
-
-            div{
-                color: #fff;
-                width: 50px;
-                height: 50px;
-                font-size: 2.4rem;
-                font-weight: 900;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 2px;
-                
-                img{
-                    filter: invert(1);
-                }
-            }
-
-            .a{
-                background-color: seagreen;
-
-            }
-
-            .r{
-                background-color: firebrick;
-            }
+    .voltar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+    
+        img{
+            width: 50px;
+            height: 50px;
+            transform: rotate(90deg);
         }
-    }
-
-    .user{
-        background-color: #ddd;
-        width: 100%;
-        text-align: center;
-    }
-
-    h2{
-
     }
 }
 
-                        // <div class='req'>
-                        //     <div class='info'>
+.card-deck{
+    height: calc(100vh - 70px);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
-                        //         <h2>".$row['nome']."</h2>
-                        //         <p>".$row['desc']."</p>
+    .card{
+        position: relative;
+        box-shadow: 0 0 10px 1px rgba($color: #000000, $alpha: .4);
+        border-radius: 5px;
+        width: 450px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin: 20px;
 
+        h1{
+            font-weight: 300;
+            font-size: 2rem;
+        }
 
-                        //         <div class='benca'>
-                        //             <a href='bencao.php?r=1?id=".$row['id']."'>Aceitar</a>
-                        //             <a href='bencao.php?r=2?id=".$row['id']."'>Recusar</a>
-                        //         </div>
+        .user{
+            font-size: 1rem;
+            color: rgba($color: #000000, $alpha: .4);
+            font-weight: 600;
+        }
 
-                        //     </div>
+        .op{
+            display: flex;
+            justify-content: space-between;
 
-                        //     <div class='user'>
-                        //         <h3>".$row['nome_user']."</h3>
-                        //     </div>
-                        // </div>   
+            .group{
+                a{
+                  font-size: 1.4rem;  
+                  text-decoration: none;
+                  color: rgba($color: #000000, $alpha: .8);
+                }
+            }
+        }
+
+        .content{
+            transition: max-height .9s;
+            font-size: 1.2rem;
+            overflow-y: hidden;
+        }
+    }
+}

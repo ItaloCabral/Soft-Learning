@@ -1,78 +1,68 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
   font-family: sans-serif;
 }
 
-.req {
-  border-radius: 5px;
-  width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e0dcdc), to(#c0bcbc));
-  background: linear-gradient(#e0dcdc, #c0bcbc);
-  margin: 10px;
+header {
+  height: 70px;
 }
-
-.req .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-  padding: 20px;
+header .voltar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
 }
-
-.req .info .benca {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.req .info .benca a {
-  text-decoration: none;
-  margin: 5px;
-}
-
-.req .info .benca div {
-  color: #fff;
+header .voltar img {
   width: 50px;
   height: 50px;
-  font-size: 2.4rem;
-  font-weight: 900;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  transform: rotate(90deg);
+}
+
+.card-deck {
+  height: calc(100vh - 70px);
+  padding: 20px;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 2px;
+  align-items: center;
+  flex-direction: column;
+}
+.card-deck .card {
+  position: relative;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  width: 450px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px;
+}
+.card-deck .card h1 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+.card-deck .card .user {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+}
+.card-deck .card .op {
+  display: flex;
+  justify-content: space-between;
+}
+.card-deck .card .op .group a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+}
+.card-deck .card .content {
+  transition: max-height 0.9s;
+  font-size: 1.2rem;
+  overflow-y: hidden;
 }
 
-.req .info .benca div img {
-  -webkit-filter: invert(1);
-          filter: invert(1);
-}
-
-.req .info .benca .a {
-  background-color: seagreen;
-}
-
-.req .info .benca .r {
-  background-color: firebrick;
-}
-
-.req .user {
-  background-color: #ddd;
-  width: 100%;
-  text-align: center;
-}
 /*# sourceMappingURL=main.css.map */

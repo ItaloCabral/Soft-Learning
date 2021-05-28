@@ -56,8 +56,7 @@ body{
             #lbl-user{
                 position: relative;
 
-                &:after{
-                    content: 'Nome já em uso :(';
+                span{
                     position: absolute;
                     top: 0;
                     left: 25%;
@@ -69,8 +68,7 @@ body{
             #lbl-email{
                 position: relative;
 
-                &:after{
-                    content: 'Email já em uso :(';
+                span{
                     position: absolute;
                     top: 0;
                     left: 25%;
